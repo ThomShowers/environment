@@ -1,0 +1,11 @@
+mainMem.partialLazyRestore = "FALSE"
+mainMem.partialLazySave = "FALSE"
+mainMem.useNamedFile = "FALSE"
+MemAllowAutoScaleDown = "FALSE
+MemTrimRate = 0
+prefvmx.minVmMemPct = "100"
+prefvmx.useRecommendedLockedMemSize = "TRUE"
+priority.grabbed = "high"
+priority.ungrabbed = "normal"
+sched.mem.pshare.enable = "FALSE"
+suspend.disabled = "TRUE"
