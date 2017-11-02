@@ -1,19 +1,21 @@
-git config --global alias.amd "commit --amend"
+git config --global alias.amend "commit --amend"
 git config --global alias.br "branch"
-git config --global alias.cbr "checkout -b"
+git config --global alias.branchname "rev-parse --abbrev-ref HEAD"
 git config --global alias.cm "commit"
-git config --global alias.cmm "commit -m"
 git config --global alias.co "checkout"
-git config --global alias.coh "checkout HEAD --"
-git config --global alias.df "diff"
-git config --global alias.dfc "diff --cached"
-git config --global alias.dft "difftool -y"
-git config --global alias.hsh "log --format=%H -1"
-git config --global alias.mrg "mergetool"
+git config --global alias.diffc "diff --cached"
+git config --global alias.hash "rev-parse HEAD"
+git config --global alias.hsh "rev-parse --short HEAD"
+git config --global alias.publish '!f() { git push -u origin $(git branchname); }; f;'
 git config --global alias.rss "reset --soft"
 git config --global alias.rsh "reset --hard"
 git config --global alias.st "status"
-git config --global alias.uncm "git reset --soft HEAD~1"
+git config --global alias.syncup '!f() { \
+    read -p "Hard reset the current branch to origin/$(git branchname)? (y/n) " yn
+    case $yn in
+        [Yy]* ) git reset --hard origin/$(git branchname);;
+    esac }; f'
+git config --global alias.uncommit "git reset --soft HEAD~1"
 git config --global alias.unstage "reset HEAD --"
 
 git config --global diff.tool vimdiff
