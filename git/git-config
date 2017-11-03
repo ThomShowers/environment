@@ -14,7 +14,8 @@ git config --global alias.syncup '!f() { \
     read -p "Hard reset the current branch to origin/$(git branchname) (y/n) ? " yn
     case $yn in
         [Yy]* ) git reset --hard origin/$(git branchname);;
-    esac }; f'
+        * ) echo "aborting syncup"
+    esac }; f;'
 git config --global alias.uncommit "git reset --soft HEAD~1"
 git config --global alias.unstage "reset HEAD --"
 
