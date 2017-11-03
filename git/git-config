@@ -16,7 +16,7 @@ git config --global alias.syncup '!f() { \
         [Yy]* ) git reset --hard origin/$(git branchname);;
         * ) echo "aborting syncup"
     esac }; f;'
-git config --global alias.uncommit "git reset --soft HEAD~1"
+git config --global alias.uncommit "reset --soft HEAD~1"
 git config --global alias.unstage "reset HEAD --"
 
 git config --global diff.tool vimdiff
