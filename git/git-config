@@ -11,7 +11,7 @@ git config --global alias.rss "reset --soft"
 git config --global alias.rsh "reset --hard"
 git config --global alias.st "status"
 git config --global alias.syncup '!f() { \
-    read -p "Hard reset the current branch to origin/$(git branchname)? (y/n) " yn
+    read -p "Hard reset the current branch to origin/$(git branchname) (y/n) ? " yn
     case $yn in
         [Yy]* ) git reset --hard origin/$(git branchname);;
     esac }; f'
