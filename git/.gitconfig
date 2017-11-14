@@ -25,7 +25,7 @@
 	diff = auto
 	interactive = true
 	status = auto
-    ui = true
+	ui = true
 [color "branch"]
 	current = "green bold"
 	local = "yellow bold"
@@ -40,7 +40,7 @@
 	changed = "bold yellow"
 	untracked = "bold red"
 [core]
-    autocrlf = true
+	autocrlf = true
 	fscache = true
 [diff]
 	tool = vimdiff
