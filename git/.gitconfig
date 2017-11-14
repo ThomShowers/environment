@@ -1,0 +1,55 @@
+[alias]
+	amend = commit --amend
+	br = branch
+	branchname = rev-parse --abbrev-ref HEAD
+	cm = commit
+	co = checkout
+	diffc = diff --cached
+	hash = rev-parse HEAD
+	hsh = rev-parse --short HEAD
+	publish = "!f() { git push -u origin $(git branchname); }; f;"
+	rss = reset --soft
+	rsh = reset --hard
+	st = status
+	syncup = "!f() {
+        read -p 
+        "Hard reset the current branch to origin/$(git branchname)? (y/n) " yn
+        case $yn in
+            [Yy]* ) git reset --hard origin/$(git branchname);;
+            * ) echo \"aborting syncup\";;
+        esac }; f;"
+	uncommit = reset --soft HEAD~1
+	unstage = reset HEAD --
+[color]
+	branch = auto
+	diff = auto
+	interactive = true
+	status = auto
+    ui = true
+[color "branch"]
+	current = "green bold"
+	local = "yellow bold"
+	remote = "red bold"
+[color "diff"]
+	frag = "magenta bold"
+	meta = "yellow bold"
+	new = "green bold"
+	old = "red bold"
+[color "status"]
+	added = "bold green"
+	changed = "bold yellow"
+	untracked = "bold red"
+[core]
+    autocrlf = true
+	fscache = true
+[diff]
+	tool = vimdiff
+[help]
+	format = html
+[merge]
+	conflictstyle = diff3
+	tool = vimdiff
+[mergetool]
+	prompt = false
+[push]
+	default = current
